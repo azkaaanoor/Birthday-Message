@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Animation</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .balloon {
+    animation: float 5s infinite alternate;
+    width: 900px;
+    height: auto;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .button {
+    position: absolute;
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #ffdb4d;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Balloons -->
+  <img class="balloon" src="balloon.gif" alt="Balloon 1">
+  <!-- Button -->
+  <button class="button" onclick="moveButton()">Press Me! I Have a Birthday Wish for you!</button>
+</div>
+
+<script>
+  let attempts = 0;
+
+  function moveButton() {
+    const button = document.querySelector('.button');
+    const buttonWidth = button.offsetWidth;
+    const buttonHeight = button.offsetHeight;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    
+    const randomX = Math.random() * (screenWidth - buttonWidth);
+    const randomY = Math.random() * (screenHeight - buttonHeight);
+    
+    button.style.left = randomX + 'px';
+    button.style.top = randomY + 'px';
+
+    attempts++;
+
+    if (attempts === 1) {
+      button.innerHTML = "Press Me!";
+    }
+
+    if (attempts === 7) {
+      button.innerHTML = "I'm Here! Press Me!";
+    }
+
+    if (attempts === 12) {
+      button.innerHTML = "Tired already ? Okay Press Me one last Time";
+    }
+
+    if (attempts === 13) {
+      button.innerHTML = "Hehehe Press Me Some More!";
+    }
+
+    if (attempts === 14) {
+      button.innerHTML = "You can do it! Press Me!";
+    }
+
+    if (attempts === 18) {
+      button.innerHTML = "We're almost there, Press Me!";
+    }
+
+    if (attempts === 21) {
+      button.innerHTML = "Acha Sorry, Press Me One Last Time!";
+    }
+
+    if (attempts >= 22) {
+      button.innerHTML = "OKAY! You can seriously go to your wish now";
+      button.onclick = function() {
+        window.location.href = "birthday_message.html";
+      }
+    }
+  }
+</script>
+</body>
+</html>
