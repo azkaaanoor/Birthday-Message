@@ -49,10 +49,13 @@
 </head>
 <body>
 <div class="container">
-  <!-- Balloons -->
-  <img class="balloon" src="balloon.gif" alt="Balloon 1">
+  <!-- Video -->
+  <video class="balloon" autoplay muted loop>
+    <source src="RM.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <!-- Button -->
-  <button class="button" onclick="moveButton()">Press Me! I Have a Birthday Wish for you!</button>
+  <button class="button" onclick="moveButton()">Press Me! I Have a Special Message for YOU <3 </button>
 </div>
 
 <script>
@@ -77,31 +80,35 @@
       button.innerHTML = "Press Me!";
     }
 
-    if (attempts === 7) {
+    if (attempts === 3) {
       button.innerHTML = "I'm Here! Press Me!";
     }
 
-    if (attempts === 12) {
+    if (attempts === 7) {
+      button.innerHTML = "No Silly! I'm Here!";
+    }
+
+    if (attempts === 10) {
       button.innerHTML = "Tired already ? Okay Press Me one last Time";
     }
 
-    if (attempts === 13) {
+    if (attempts === 11) {
       button.innerHTML = "Hehehe Press Me Some More!";
     }
 
-    if (attempts === 14) {
+    if (attempts === 12) {
       button.innerHTML = "You can do it! Press Me!";
     }
 
-    if (attempts === 18) {
+    if (attempts === 16) {
       button.innerHTML = "We're almost there, Press Me!";
     }
 
-    if (attempts === 21) {
+    if (attempts === 19) {
       button.innerHTML = "Acha Sorry, Press Me One Last Time!";
     }
 
-    if (attempts >= 22) {
+    if (attempts >= 20) {
       button.innerHTML = "OKAY! You can seriously go to your wish now";
       button.onclick = function() {
         window.location.href = "birthday_message.html";
